@@ -4,6 +4,7 @@ $("document").ready(function() {
     console.log(i);
   });
 
+toto
 
   $("#btn-valide").click(function(){ 
 	  
