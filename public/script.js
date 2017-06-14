@@ -4,15 +4,19 @@ $("document").ready(function() {
     console.log(i);
   });
 
-toto
 
   $("#btn-valide").click(function(){ 
-	  
-    $("#content").html( "<p>new content !!!</p>" );
-
-    $("#btn-valide").remove();
-    $(this).fadeOut().delay(5000).fadeIn();
-
+	if ($("#city").val().length > 2) {
+  
+    //$("#btn-valide").remove();
+    //$(this).fadeOut().delay(5000).fadeIn();
+  		}
+	  else {
+    	event.preventDefault();
+		
+		$("#messageErreur").html( "<center><strong><p>Merci de saisir un nom de ville supérieur à deux caractères !!!</p></strong></center>" );		  
+	  }
+	
   });
   
   
