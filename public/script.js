@@ -20,19 +20,17 @@ $("document").ready(function () {
 
 	$(function () {
 
-		$(".list-group").sortable(
-		{
-			update: function( event,ui )
-			{console.log($(".list-group").sortable("toArray"));}
-		}
-		);
+		$(".list-group").sortable({
+			update: function (event, ui)
+			
+			{
+				var data = $(".list-group").sortable("toArray");
+				$.getJSON("http://localhost/update?data="+JSON.stringify(data),function (data) {
+					console.log(data);
+				});
+					}
+				});
 		$(".list-group").disableSelection();
 	});
-	
-	
 
-	/*$.getJSON("http://api.openweathermap.org/data/2.5/weather?q=Lyon&APPID=9b754f1f40051783e4f72c176953866e&units=metric&lang=fr", function(data) {
-	  console.log(data);
-	});*/
-
-})
+});

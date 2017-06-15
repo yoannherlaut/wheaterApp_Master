@@ -25,6 +25,9 @@ app.get('/delete', function (req, res) {
   res.render('index', {cityList : cityList});
 });
 
+app.get('/update', function (req,res) {
+ console.log(req.query.data);	
+});
 
 app.listen(80, function () {
   console.log("Server listening on port 80");
